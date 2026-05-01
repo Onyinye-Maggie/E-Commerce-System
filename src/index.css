@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  color: #111827;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
+.button-outline {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.dark {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+.dark * {
+  color: inherit;
+}
+
+.dark .navbar {
+  background: #020617;
+  color: #f1f5f9;
+  backdrop-filter: blur(10px);
+}
+
+.dark .navbar a {
+  color: #e2e8f0;
+}
+
+.dark .navbar a:hover {
+  color: #60a5fa;
+}
+
+.dark .navbar span {
+  color: #f1f5f9;
+}
+
+.dark .navbar button {
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+.dark .card {
+  background: #1e293b;
+}
+
+.dark input,
+.dark textarea {
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+}
+
+.dark .button {
+  background: #3b82f6;
+}
+
+.dark .button:hover {
+  background: #2563eb;
+}
+
+.dark .button-outline {
+  border: 1px solid #64748b;
+}
+
+.dark a {
+  color: #93c5fd;
+}
+/* 🌙 ADMIN DARK MODE FIX */
+
+/* admin buttons */
+.dark button {
+  background: #334155;
+  color: #f1f5f9;
+  border: none;
+}
+
+/* admin headings */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p {
+  color: #f1f5f9;
+}
+
+/* fix card content */
+.dark .card * {
+  color: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .card {
+    padding: 10px;
+  }
+}
